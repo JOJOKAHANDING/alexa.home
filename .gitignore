@@ -1,0 +1,5 @@
+amazon-echo.java/*.jar
+amazon-echo.java/listen.sh
+amazon-echo.java/data/
+backend/config.php
+orvfms/
