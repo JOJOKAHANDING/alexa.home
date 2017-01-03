@@ -25,8 +25,8 @@ SOFTWARE. -->
 // @Date:   2016-12-30T22:13:12-08:00
 // @Email:  jojokahanding@gmail.com
 // @Filename: serverS20.php
-# @Last modified by:   Raphael (Jojo) Kahanding
-# @Last modified time: 2017-01-02T08:28:00-08:00
+# @Last modified by:   j_kahanding
+# @Last modified time: 2017-01-02T17:14:03-08:00
 
 include_once 'config.php';
 include_once 'mytrace.php';
@@ -62,13 +62,22 @@ if (isset($_GET['NAME']) && isset($_GET['CMD'])) {
                 if ($newStatus != $currentStatus) {
                     actionAndCheck($mac, $newStatus, $s20Table);
                 }
-                TRACEMSG("$name found !!!");
+                MYTRACEMSG("$name found !!!");
                 break;
             }
         }
         if (!$found) {
-            TRACEMSG("$name found !!!");
+            MYTRACEMSG("$name not found !!!");
         }
+        else {
+            $response=<<<ETD
+HTTP/1.1 200 OK
+CONTENT-LENGTH: 0
+CONTENT-TYPE: text/xml; charset="utf-8"
+ETD;
+            header($response);
+        }
+
     }
 }
 
