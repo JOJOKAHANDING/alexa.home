@@ -26,7 +26,7 @@ SOFTWARE. -->
 // @Email:  jojokahanding@gmail.com
 // @Filename: serverS20.php
 # @Last modified by:   j_kahanding
-# @Last modified time: 2017-01-02T17:14:03-08:00
+# @Last modified time: 2017-01-09T20:38:36-08:00
 
 include_once 'config.php';
 include_once 'mytrace.php';
@@ -43,14 +43,15 @@ MYTRACEMSG('POST :'.print_r($_POST, true));
 
 if (isset($_GET['NAME']) && isset($_GET['CMD'])) {
     include_once '../orvfms/lib/orvfms/orvfms.php';
-    $s20Table = initS20Data();
+    $s20Table = readDataFile(); //initS20Data();
+    // make sure you modify ../orvfms/lib/orvfms/globals.php
+    // to point to the temp file
     if (count($s20Table) == 0) {
         MYTRACEMSG("No sockets found \n".
         "Please check if all sockets are on-line and assure that they \n".
         "they are not locked (check WiWo app -> select socket -> more -> Advanced \n".
         "This code does not support locked or password protected devices\n");
     } else {
-        $s20Table = updateAllStatus($s20Table);
         $found = false;
         $name = $_GET['NAME'];
         foreach ($s20Table as $mac => $devData) {
@@ -59,9 +60,7 @@ if (isset($_GET['NAME']) && isset($_GET['CMD'])) {
                 $currentStatus = checkStatus($mac, $s20Table);
                 $newStatus = $_GET['CMD'] == 'ON' ? 1 : 0;
 
-                if ($newStatus != $currentStatus) {
-                    actionAndCheck($mac, $newStatus, $s20Table);
-                }
+                actionAndCheck($mac, $newStatus, $s20Table);
                 MYTRACEMSG("$name found !!!");
                 break;
             }
