@@ -25,11 +25,17 @@ SOFTWARE. -->
 # @Date:   2016-10-22T22:25:10-07:00
 # @Email:  jojokahanding@gmail.com
 # @Filename: custom-config.php
-# @Last modified by:   Raphael (Jojo) Kahanding
-# @Last modified time: 2017-01-02T09:45:37-08:00
+# @Last modified by:   j_kahanding
+# @Last modified time: 2017-01-14T15:15:04-08:00
 # - all constants are defined here
 # please copy this file to config.php amd do your modifications there
 
 define('PATH_LOGFILE', "/volume1/homes/jojo/temp/");
 define('EOL_LOG', "\r\n");
+
+define('NEATO_EMAIL', 'neato@yahoo.com');
+define('NEATO_PASSWORD', 'secret');
+
+date_default_timezone_set('America/Los_Angeles');
+
 ?>

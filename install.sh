@@ -3,8 +3,8 @@
 # @Date:   2017-01-02T08:30:36-08:00
 # @Email:  jojokahanding@gmail.com
 # @Filename: install.sh
-# @Last modified by:   Raphael (Jojo) Kahanding
-# @Last modified time: 2017-01-02T09:50:42-08:00
+# @Last modified by:   j_kahanding
+# @Last modified time: 2017-01-14T01:25:08-08:00
 
 # The MIT License
 #
@@ -39,3 +39,6 @@ chmod -Rfv 777 orvfms
 # Notes are from:
 # https://github.com/hollie/misterhouse/wiki/Echo-integration-using-amazon-echo-ha-bridge
 curl -L https://github.com/armzilla/amazon-echo-ha-bridge/releases/download/v0.4.0/amazon-echo-bridge-0.4.0.jar --output amazon-echo.java/amazon-echo-bridge-0.4.0.jar
+#pull neato botvac
+git clone https://github.com/tomrosenback/botvac.git
+chmod -Rfv 777 botvac

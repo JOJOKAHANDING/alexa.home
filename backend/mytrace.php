@@ -25,8 +25,8 @@ SOFTWARE. -->
 # @Date:   2016-10-22T22:25:09-07:00
 # @Email:  jojokahanding@gmail.com
 # @Filename: mytrace.php
-# @Last modified by:   Raphael (Jojo) Kahanding
-# @Last modified time: 2017-01-02T08:28:07-08:00
+# @Last modified by:   j_kahanding
+# @Last modified time: 2017-01-14T15:14:59-08:00
 
 function LogFilePath()
 {
@@ -85,6 +85,7 @@ function POSTVAR($index)
 	}
     return $value;
 }
+
 
 
 ?>
